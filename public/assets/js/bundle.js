@@ -543,6 +543,7 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 
 
 var generateBtn = document.querySelector("button");
+var str = '';
 generateBtn.addEventListener('click', function () {
   var newCpf = new _modules_criaCpf_js__WEBPACK_IMPORTED_MODULE_2__["createCpf"]().buildCpf();
   var finallyCpf = new _modules_validaCpf_js__WEBPACK_IMPORTED_MODULE_1__["validCpf"](newCpf).isValid();
@@ -550,6 +551,7 @@ generateBtn.addEventListener('click', function () {
   var cpfIsValid = document.querySelector("#is-valid");
   if (finallyCpf !== 'Deu Erro!') {
     result.textContent = formatCpf(finallyCpf);
+    str += ' ' + formatCpf(finallyCpf);
     cpfIsValid.textContent = "".concat(result.textContent, " \xE9 v\xE1lido!");
   }
 });
